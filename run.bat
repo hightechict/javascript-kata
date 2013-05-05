@@ -1,3 +1,4 @@
+@echo off
 rem This file is part of javascript-kata.
 rem 
 rem javascript-kata is free software: you can redistribute it and/or modify
@@ -12,5 +13,4 @@ rem GNU General Public License for more details.
 rem 
 rem You should have received a copy of the GNU General Public License
 rem along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
-
 jasmine-node.cmd . --verbose --autotest --color
