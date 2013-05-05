@@ -1,4 +1,4 @@
-/*
+<#
 This file is part of javascript-kata.
 
 javascript-kata is free software: you can redistribute it and/or modify
@@ -13,10 +13,13 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
-*/
-var example = require('./example').example;
-describe('silly example', function() {
-    it('should return the first irregular prime', function() {
-        expect(example.silly()).toBe(37);
-    });
-});
+#>
+$choco = Get-Command -ErrorAction SilentlyContinue chocolatey
+if ($choco -eq $null) {
+    Write-Verbose "Installing chocolatey"
+    Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+    $env:\PATH+=";$($env:\systemdrive)\chocolatey\bin"
+}
+chocolatey install nodejs.install
+& 'C:\Program Files\nodejs\npm.cmd' install jasmine-node -g
+
