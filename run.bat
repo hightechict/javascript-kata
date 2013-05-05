@@ -13,4 +13,4 @@ rem
 rem You should have received a copy of the GNU General Public License
 rem along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
 
-jasmine-node.cmd *.spec.js --verbose --autotest --color
+jasmine-node.cmd . --verbose --autotest --color
