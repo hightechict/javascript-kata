@@ -18,7 +18,7 @@ $choco = Get-Command -ErrorAction SilentlyContinue chocolatey
 if ($choco -eq $null) {
     Write-Verbose "Installing chocolatey"
     Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-    $env:\PATH+=";$($env:\systemdrive)\chocolatey\bin"
+    $env:PATH+=";$($env:systemdrive)\chocolatey\bin"
 }
 chocolatey install nodejs.install
 & 'C:\Program Files\nodejs\npm.cmd' install jasmine-node -g
