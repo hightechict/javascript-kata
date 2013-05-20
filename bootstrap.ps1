@@ -22,4 +22,5 @@ if ($choco -eq $null) {
 }
 chocolatey install nodejs.install
 & 'C:\Program Files\nodejs\npm.cmd' install jasmine-node -g
+& 'C:\Program Files\nodejs\npm.cmd' install jshint -g
 
