@@ -14,10 +14,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
 */
-'use strict';
+(function() { 
+    'use strict';
 
-exports.example = {
-    silly: function () {
-        return 37;
-    }
-};
+    exports.example = {
+        silly: function () {
+            return 37;
+        }
+    };
+}());
