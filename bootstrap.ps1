@@ -14,6 +14,15 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
 #>
+
+function Get-Batchfile ($file) {
+    $cmd = "`"$file`" & set"
+    &  $env:comspec /c  "$cmd" | Foreach-Object {
+        $p, $v = $_.split('=')
+        Set-Item -path env:$p -value $v
+    }
+}
+
 $choco = Get-Command -ErrorAction SilentlyContinue chocolatey
 if ($choco -eq $null) {
     Write-Verbose "Installing chocolatey"
@@ -21,6 +30,7 @@ if ($choco -eq $null) {
     $env:PATH+=";$($env:systemdrive)\chocolatey\bin"
 }
 chocolatey install nodejs.install
+Get-Batchfile 'C:\Program Files\nodejs\nodevars.bat' 
 & 'C:\Program Files\nodejs\npm.cmd' install jasmine-node -g
 & 'C:\Program Files\nodejs\npm.cmd' install jshint -g
 
