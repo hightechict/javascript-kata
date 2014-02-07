@@ -19,7 +19,9 @@ This directory contains the following:
     - installs node package jasmine-node plus it's dependencies
     - installs jshint plus it's dependencies
     - installs node-inspector plus it's dependencies
+
   Note that this script needs an internet connection to function.
+
 - `check.bat` a script that invokes jshint on the current directory.
 - `check.ps1` a script that can take advantage of the [pswatch][psw] module,
   such that jshint can be run whenever a javascript file changes on the 
