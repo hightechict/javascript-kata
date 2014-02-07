@@ -18,7 +18,15 @@ This directory contains the following:
     - installs nodejs.install chocolatey package
     - installs node package jasmine-node plus it's dependencies
     - installs jshint plus it's dependencies
+    - installs node-inspector plus it's dependencies
   Note that this script needs an internet connection to function.
+- `check.bat` a script that invokes jshint on the current directory.
+- `check.ps1` a script that can take advantage of the [pswatch][psw] module,
+  such that jshint can be run whenever a javascript file changes on the 
+  filesystem.
+- `debug.bat` a scripts that starts a debugging session using node-inspector,
+  you have to supply the name of the spec you wish to debug. Be sure to add a
+  `debugger;` statement to your spec where you want to break.
 - `example.js`, example javascript file containing you're production code.
 - `example.spec.js`, example javascript file containing a single 
   specification.
@@ -51,3 +59,4 @@ This directory contains the following:
 [ecma]: http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf
 [mjg]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 [mjr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference 
+[psw]: https://github.com/jfromaniello/pswatch

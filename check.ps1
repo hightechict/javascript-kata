@@ -20,7 +20,12 @@ function run-jshint() {
 $specdir = split-path -parent $MyInvocation.MyCommand.Definition
 $havePsWatch = (get-module -ListAvailable | 
   select-object -ExpandProperty Name) -contains 'pswatch'
+$psWatchIsLoaded = (get-module |
+  select-object -ExpandProperty Name) -contains 'pswatch'
 if($havePsWatch) {
+  if(-not $psWatchIsLoaded) {
+    import-module pswatch
+  } 
   watch $specdir | get-item | 
     where-object { $_.Extension -eq ".js" } | 
     foreach-object -begin { clear-host } -process { 
