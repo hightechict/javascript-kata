@@ -1,4 +1,4 @@
-/*
+<#
 This file is part of javascript-kata.
 
 javascript-kata is free software: you can redistribute it and/or modify
@@ -13,14 +13,22 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
-*/
-(function() {
-  'use strict';
+#>
+function run-jshint() {
+  & (join-path $specdir check.bat) 
+}
+$specdir = split-path -parent $MyInvocation.MyCommand.Definition
+$havePsWatch = (get-module -ListAvailable | 
+  select-object -ExpandProperty Name) -contains 'pswatch'
+if($havePsWatch) {
+  watch $specdir | get-item | 
+    where-object { $_.Extension -eq ".js" } | 
+    foreach-object -begin { clear-host } -process { 
+      clear-host
+      run-jshint 
+    }
+} else {
+  clear-host
+  run-jshint
+}
 
-  var example = require('./example').example;
-  describe('silly example', function() {
-    it('should return the first irregular prime', function() {
-      expect(example.silly()).toBe(37);
-    });
-  });
-}());
