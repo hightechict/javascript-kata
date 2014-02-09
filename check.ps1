@@ -26,8 +26,8 @@ if($havePsWatch) {
   if(-not $psWatchIsLoaded) {
     import-module pswatch
   } 
-  watch $specdir | get-item | 
-    where-object { $_.Extension -eq ".js" } | 
+  watch $specdir |  get-item -ErrorAction SilentlyContinue | 
+    where-object { $_ -and $_.Extension -eq ".js" } | 
     foreach-object -begin { clear-host } -process { 
       clear-host
       run-jshint 
