@@ -29,7 +29,7 @@ This directory contains the following:
 - `debug.bat` a scripts that starts a debugging session using node-inspector,
   you have to supply the name of the spec you wish to debug. Be sure to add a
   `debugger;` statement to your spec where you want to break.
-- `example.js`, example javascript file containing you're production code.
+- `example.js`, example javascript file containing your production code.
 - `example.spec.js`, example javascript file containing a single 
   specification.
 - `LICENSE`, a copy of the license that applies to this repository, which is 
@@ -37,6 +37,35 @@ This directory contains the following:
 - `run.bat`, run and watch the specs. Watch the specs means that the filesystem 
   will be watched for modifications to `.js` files and as soon as changes are 
   detected the specs will be run.
+
+## Ubuntu-howto
+
+### Install node package manager
+
+    sudo apt-get install npm
+
+### Set global registry for npm
+
+    npm config set registry http://registry.npmjs.org/
+
+### Install packages using npm
+
+#### Install packages globally
+
+    sudo npm install jasmine-node -g
+    sudo npm install jshint -g
+    sudo npm install node-inspector -g
+
+#### Install packages as a user 
+
+##### This will install the packages in `<some dir>/node_modules`
+
+    cd <some dir>
+    npm install jasmine-node
+    npm install jshint
+    npm install node-inspector
+    
+    export PATH=`pwd`/.bin:$PATH
 
 ## Links with quick references and tutorials
 
@@ -62,27 +91,4 @@ This directory contains the following:
 [mjg]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 [mjr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference 
 [psw]: https://github.com/jfromaniello/pswatch
-
-
-# Ubuntu-howto
-
-## Install node package manager
-    sudo apt-get install npm
-
-## set global registry for npm
-    npm config set registry http://registry.npmjs.org/
-
-## install packages using npm
-### install packages globally
-    sudo npm install jasmine-node -g
-    sudo npm install jshint -g
-    sudo npm install node-inspector -g
-
-### install packages as user (This will install the packages in <some dir>/node_modules)
-    cd <some dir>
-    npm install jasmine-node
-    npm install jshint
-    npm install node-inspector
-    
-    export PATH=`pwd`/.bin:$PATH
 
