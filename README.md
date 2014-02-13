@@ -62,3 +62,27 @@ This directory contains the following:
 [mjg]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 [mjr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference 
 [psw]: https://github.com/jfromaniello/pswatch
+
+
+# Ubuntu-howto
+
+## Install node package manager
+sudo apt-get install npm
+
+## set global registry for npm
+npm config set registry http://registry.npmjs.org/
+
+## install packages using npm
+### install packages globally
+sudo npm install jasmine-node -g
+sudo npm install jshint -g
+sudo npm install node-inspector -g
+
+### install packages as user (This will install the packages in <some dir>/node_modules)
+cd <some dir>
+npm install jasmine-node
+npm install jshint
+npm install node-inspector
+
+export PATH=`pwd`/.bin:$PATH
+
