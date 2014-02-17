@@ -13,4 +13,4 @@ rem GNU General Public License for more details.
 rem 
 rem You should have received a copy of the GNU General Public License
 rem along with javascript-kata.  If not, see <http://www.gnu.org/licenses/>.
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NoProfile -File bootstrap.ps1 -ExecutionPolicy Unrestricted -NoExit
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NoProfile -ExecutionPolicy Unrestricted -NoExit -File bootstrap.ps1 
