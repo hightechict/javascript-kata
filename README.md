@@ -80,7 +80,7 @@ This directory contains the following:
 
 [node]: http://nodejs.org/
 [jasmn]: https://github.com/mhevery/jasmine-node
-[jasm]: http://pivotal.github.io/jasmine/
+[jasm]: https://jasmine.github.io/
 [ps]: http://technet.microsoft.com/en-us/scriptcenter/powershell.aspx
 [gplv3]: http://www.gnu.org/licenses/gpl-3.0.html
 [jtgp]: http://shop.oreilly.com/product/9780596517748.do
